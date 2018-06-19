@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Show, TvmazeService } from 'tvmaze';
 
 @Component({
-  selector: 'ld-root',
+  selector: 'app-root',
   template: `
     <tm-poster [showId]="336"></tm-poster>
     <pre>{{ show$ | async | json }}</pre>
