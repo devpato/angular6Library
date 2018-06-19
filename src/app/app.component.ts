@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Show, TvmazeService } from 'tvmaze';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'ld-root',
+  template: `
+    <tm-poster [showId]="336"></tm-poster>
+    <pre>{{ show$ | async | json }}</pre>
+  `
 })
 export class AppComponent {
-  title = 'app';
+  show$: Observable<Show>;
+
+  constructor(private tvmaze: TvmazeService) {
+    this.show$ = this.tvmaze.getShow(336);
+  }
 }
