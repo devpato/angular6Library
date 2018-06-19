@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { TvmazeComponent } from './tvmaze.component';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { PosterComponent } from './poster/poster.component';
 
 @NgModule({
-  imports: [
-  ],
-  declarations: [TvmazeComponent, PosterComponent],
-  exports: [TvmazeComponent]
+  imports: [CommonModule, HttpClientModule],
+  declarations: [PosterComponent],
+  exports: [PosterComponent]
 })
-export class TvmazeModule { }
+export class TvmazeModule {}
